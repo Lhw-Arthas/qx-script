@@ -1,17 +1,3 @@
-/***********************************************
- > 应用名称：墨鱼自用B站去广告脚本
- > 脚本作者：@ddgksf2013
- > 微信账号：墨鱼手记
- > 更新时间：2024-05-10
- > 通知频道：https://t.me/ddgksf2021
- > 贡献投稿：https://t.me/ddgksf2013_bot
- > 问题反馈：ddgksf2013@163.com
- > 特别提醒：如需转载请注明出处，谢谢合作！
- ***********************************************/
-
-
-
-
 const version = 'V2.0.120';
 
 let body = $response.body;
@@ -118,7 +104,7 @@ if (body) {
         case/^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine\/ipad/.test($request.url):
             try {
                 let E = JSON.parse(body);
-                E.data.vip.status || (E.data.vip.type = 2, E.data.vip.status = 1, E.data.vip.vip_pay_type = 1, E.data.vip.due_date = 466982416e4, E.data.vip_type = 2), body = JSON.stringify(E)
+                E.data.vip.status || (E.data.vip_type = 2, E.data.vip.type = 2, E.data.vip.status = 1, E.data.vip.vip_pay_type = 1, E.data.vip.due_date = 3818419199, E.data.vip.label = {path: "", text: "年度大会员", label_theme: "annual_vip", text_color: "#FFFFFF", bg_style: 1, bg_color: "#FB7299", border_color: "", image: "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png"}, E.data.vip.nickname_color = "#FB7299", E.data.vip.role = 3), body = JSON.stringify(E)
             } catch (z) {
                 console.log("bilibili mypage ipad:" + z)
             }
@@ -176,7 +162,7 @@ if (body) {
         case/https?:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\?/.test($request.url):
             try {
                 let E = JSON.parse(body);
-                E.data.vip.status || (E.data.vip.type = 2, E.data.vip.status = 1, E.data.vip.vip_pay_type = 1, E.data.vip.due_date = 466982416e4), body = JSON.stringify(E)
+                E.data.vip.status || (E.data.vip.type = 2, E.data.vip.status = 1, E.data.vip.vip_pay_type = 1, E.data.vip.due_date = 3818419199, E.data.vip.role = 3), body = JSON.stringify(E)
             } catch (z) {
                 console.log("bilibili 1080p:" + z)
             }
