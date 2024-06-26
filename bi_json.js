@@ -2,7 +2,7 @@ const version = 'V2.0.120';
 
 let body = $response.body;
 if (body) {
-    console.log(!0)
+    console.log($request.url)
     console.log(body)
     switch (!0) {
         case/pgc\/season\/app\/related\/recommend\?/.test($request.url):
@@ -198,8 +198,7 @@ if (body) {
             break;
         case/^https?:\/\/app\.bilibili\.com\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView/.test($request.url):
             try {
-                let A = JSON.parse(body);
-                console.log("video play url debug:" + A)
+                console.log("video play url debug:" + body)
             } catch (C) {
                 console.log("video play url exception:" + C)
             }
