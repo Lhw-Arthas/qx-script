@@ -194,6 +194,14 @@ if (body) {
                 console.log("bilibili xlive:" + C)
             }
             break;
+        case/https?:\/\/((app|api)\.(\w{2,15})?\.(com|cn)).*player.*\.(v3|v2|v1).*Play(URL|View|Conf).*$/.test($request.url):
+            try {
+                let A = JSON.parse(body);
+                console.log("video play url debug:" + A)
+            } catch (C) {
+                console.log("video play url exception:" + C)
+            }
+            break;
         default:
             $done({})
     }
