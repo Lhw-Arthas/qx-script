@@ -194,7 +194,7 @@ if (body) {
                 console.log("bilibili xlive:" + C)
             }
             break;
-        case/https?:\/\/((app|api)\.(\w{2,15})?\.(com|cn)).*player.*\.(v3|v2|v1).*Play(URL|View|Conf).*$/.test($request.url):
+        case/https?:\/\/app\.bilibili\.com\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView/.test($request.url):
             try {
                 let A = JSON.parse(body);
                 console.log("video play url debug:" + A)
