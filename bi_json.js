@@ -1,3 +1,17 @@
+/***********************************************
+ > 应用名称：墨鱼自用B站去广告脚本
+ > 脚本作者：@ddgksf2013
+ > 微信账号：墨鱼手记
+ > 更新时间：2024-05-10
+ > 通知频道：https://t.me/ddgksf2021
+ > 贡献投稿：https://t.me/ddgksf2013_bot
+ > 问题反馈：ddgksf2013@163.com
+ > 特别提醒：如需转载请注明出处，谢谢合作！
+ ***********************************************/
+
+
+
+
 const version = 'V2.0.120';
 
 let body = $response.body;
@@ -101,6 +115,14 @@ if (body) {
                 console.log("bilibili tabprocess:" + g)
             }
             break;
+        case/^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine\/ipad/.test($request.url):
+            try {
+                let E = JSON.parse(body);
+                E.data.vip.status || (E.data.vip.type = 2, E.data.vip.status = 1, E.data.vip.vip_pay_type = 1, E.data.vip.due_date = 466982416e4, E.data.vip_type = 2), body = JSON.stringify(E)
+            } catch (z) {
+                console.log("bilibili mypage ipad:" + z)
+            }
+            break;
         case/^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine/.test($request.url):
             try {
                 let v = JSON.parse(body),
@@ -111,14 +133,6 @@ if (body) {
                 }), delete v.data.vip_section_v2, delete v.data.vip_section, v.data.hasOwnProperty("live_tip") && (v.data.live_tip = {}), v.data.hasOwnProperty("answer") && (v.data.answer = {}), v.data.vip.status || (v.data.vip_type = 2, v.data.vip.type = 2, v.data.vip.status = 1, v.data.vip.vip_pay_type = 1, v.data.vip.due_date = 466982416e4), body = JSON.stringify(v)
             } catch (_) {
                 console.log("bilibili mypage:" + _)
-            }
-            break;
-        case/^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine\/ipad/.test($request.url):
-            try {
-                let E = JSON.parse(body);
-                E.data.vip.status || (E.data.vip.type = 2, E.data.vip.status = 1, E.data.vip.vip_pay_type = 1, E.data.vip.due_date = 466982416e4, E.data.vip_type = 2), body = JSON.stringify(E)
-            } catch (z) {
-                console.log("bilibili mypage ipad:" + z)
             }
             break;
         case/^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom/.test($request.url):
