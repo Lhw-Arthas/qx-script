@@ -2,8 +2,8 @@ const version = 'V2.0.120';
 
 let body = $response.body;
 if (body) {
-    console.log($request.url)
-    console.log(body)
+    /*console.log($request.url)
+    console.log(body)*/
     switch (!0) {
         case/pgc\/season\/app\/related\/recommend\?/.test($request.url):
             try {
