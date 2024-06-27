@@ -196,13 +196,13 @@ if (body) {
                 console.log("bilibili xlive:" + C)
             }
             break;
-        case/^https?:\/\/app\.bilibili\.com\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView/.test($request.url):
+        /*case/^https?:\/\/app\.bilibili\.com\/bilibili\.app\.playurl\.v1\.PlayURL\/PlayView/.test($request.url):
             try {
                 console.log("video play url debug:" + body)
             } catch (C) {
                 console.log("video play url exception:" + C)
             }
-            break;
+            break;*/
         default:
             $done({})
     }
